@@ -1,5 +1,16 @@
+.section-card {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin-top: 28rpx;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
 .reveal-button {
-  margin-top: 24rpx;
+  margin-top: 0;
+  border-radius: 28rpx;
 }
 
 .action-row {
@@ -11,4 +22,5 @@
 .compact-button {
   flex: 1;
   font-size: 28rpx;
+  border-radius: 24rpx;
 }

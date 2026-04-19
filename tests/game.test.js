@@ -20,9 +20,9 @@ test('createGameRound assigns exactly one undercover and matching common words',
   assert.equal(round.players.filter((player) => player.isUndercover).length, 1);
   assert.equal(round.players[0].label, '玩家 1');
   assert.equal(round.answer.commonWord, '苹果');
-  assert.equal(round.answer.commonPinyin, 'ping guo');
+  assert.equal(round.answer.commonPinyin, 'píng guǒ');
   assert.equal(round.answer.undercoverWord, '梨');
-  assert.equal(round.answer.undercoverPinyin, 'li');
+  assert.equal(round.answer.undercoverPinyin, 'lí');
 });
 
 test('togglePlayerCard opens one card at a time and marks viewed on close', () => {

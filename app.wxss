@@ -1,36 +1,44 @@
 :root {
-  --bg-top: #fff7e8;
-  --bg-bottom: #ffd29b;
-  --panel: rgba(255, 248, 236, 0.92);
-  --panel-strong: #fff3df;
-  --ink: #2d1b11;
-  --muted: #7c5c47;
-  --accent: #f36c3d;
-  --accent-deep: #c5451f;
-  --accent-soft: #ffd8c6;
-  --success: #1e9c68;
-  --border: rgba(94, 52, 33, 0.14);
-  --shadow: 0 18rpx 44rpx rgba(112, 54, 23, 0.12);
-  --radius-xl: 32rpx;
-  --radius-lg: 24rpx;
-  --radius-md: 18rpx;
+  --bg-top: #f7ecd5;
+  --bg-bottom: #dfc39c;
+  --table-top: #32594f;
+  --table-bottom: #1e3832;
+  --panel: rgba(251, 243, 228, 0.94);
+  --panel-strong: #fff9ef;
+  --ink: #2d2118;
+  --muted: #77614d;
+  --accent: #b85b3f;
+  --accent-deep: #7c3526;
+  --accent-soft: #e7c4ac;
+  --success: #2f8c69;
+  --border: rgba(79, 49, 33, 0.14);
+  --shadow: 0 22rpx 48rpx rgba(88, 48, 27, 0.14);
+  --shadow-heavy: 0 28rpx 60rpx rgba(34, 19, 12, 0.22);
+  --radius-xl: 36rpx;
+  --radius-lg: 28rpx;
+  --radius-md: 20rpx;
 }
 
 page {
   min-height: 100%;
-  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+  background:
+    radial-gradient(circle at top, rgba(255, 251, 243, 0.68) 0%, rgba(255, 251, 243, 0) 32%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
   color: var(--ink);
-  font-family: "Trebuchet MS", "Avenir Next", "PingFang SC", sans-serif;
+  font-family: "Trebuchet MS", "Palatino", "PingFang SC", serif;
 }
 
 .page-shell {
+  min-height: 100vh;
   padding: 32rpx 24rpx 48rpx;
+  box-sizing: border-box;
 }
 
 .section-card {
   margin-top: 24rpx;
   padding: 28rpx;
-  background: var(--panel);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 244, 0.96) 0%, rgba(248, 237, 216, 0.94) 100%);
   border: 2rpx solid var(--border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
@@ -70,21 +78,22 @@ page {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, #ff8b52 100%);
-  color: #fff8f0;
+  background: linear-gradient(135deg, #ab563b 0%, #cf7756 100%);
+  color: #fffaf3;
   font-size: 30rpx;
   font-weight: 700;
-  box-shadow: 0 16rpx 28rpx rgba(243, 108, 61, 0.24);
+  letter-spacing: 2rpx;
+  box-shadow: 0 18rpx 34rpx rgba(133, 63, 41, 0.24);
 }
 
 .button-primary[disabled] {
-  background: #e8cfbc;
+  background: #d8c3ae;
   color: rgba(45, 27, 17, 0.45);
   box-shadow: none;
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 249, 241, 0.86);
   color: var(--ink);
   border: 2rpx solid rgba(94, 52, 33, 0.12);
 }

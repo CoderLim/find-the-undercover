@@ -7,9 +7,8 @@
         bindtap="onCardTap"
       >
         <view wx:if="{{item.isOpen || gamePhase === 'revealed'}}" class="face-content">
-          <view class="face-label">{{item.label}}</view>
-          <view class="face-word">{{item.word}}</view>
           <view class="face-pinyin">{{item.pinyin}}</view>
+          <view class="face-word">{{item.word}}</view>
           <view wx:if="{{gamePhase !== 'revealed'}}" class="card-hint">再次点击关闭</view>
         </view>
 

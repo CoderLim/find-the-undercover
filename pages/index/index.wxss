@@ -1,3 +1,7 @@
 .page-shell {
-  padding-top: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 32rpx;
+  padding-bottom: 72rpx;
 }

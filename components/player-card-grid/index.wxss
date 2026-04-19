@@ -1,35 +1,67 @@
+.section-card {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin-top: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18rpx;
-  margin-top: 26rpx;
+  gap: 22rpx;
 }
 
 .player-card {
-  min-height: 218rpx;
-  padding: 22rpx;
-  border-radius: 28rpx;
+  position: relative;
+  min-height: 228rpx;
+  padding: 24rpx;
+  border-radius: 30rpx;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 236, 211, 0.9) 100%);
-  border: 2rpx solid rgba(243, 108, 61, 0.1);
-  box-shadow: 0 14rpx 28rpx rgba(128, 67, 31, 0.1);
+    linear-gradient(145deg, #9c4d40 0%, #7f352c 100%);
+  border: 4rpx solid rgba(255, 247, 235, 0.28);
+  box-shadow: 0 20rpx 36rpx rgba(15, 11, 8, 0.22);
+}
+
+.player-card::before {
+  content: "";
+  position: absolute;
+  inset: 14rpx;
+  border-radius: 22rpx;
+  border: 2rpx solid rgba(255, 244, 231, 0.22);
+  background:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.06) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.06) 75%, transparent 75%, transparent);
+  background-size: 18rpx 18rpx;
+  pointer-events: none;
 }
 
 .player-card-open {
   background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.82) 0, rgba(255, 255, 255, 0) 38%),
-    linear-gradient(135deg, #f36c3d 0%, #ff9b61 100%);
-  color: #fff8ef;
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.84) 0, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #fff7e8 0%, #f2e1c3 100%);
+  color: #332218;
+  transform: translateY(-6rpx) rotate(-1.2deg);
+}
+
+.player-card-open::before {
+  inset: 0;
+  border-radius: 30rpx;
+  border: 2rpx solid rgba(121, 84, 48, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 32%),
+    linear-gradient(90deg, rgba(129, 87, 50, 0.03) 0%, rgba(129, 87, 50, 0.07) 50%, rgba(129, 87, 50, 0.03) 100%);
 }
 
 .player-card-undercover {
   background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.78) 0, rgba(255, 255, 255, 0) 34%),
-    linear-gradient(135deg, #c5451f 0%, #eb6b43 100%);
+    radial-gradient(circle at top right, rgba(255, 250, 245, 0.72) 0, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #f2d5cb 0%, #ddb49e 100%);
 }
 
 .player-card-viewed {
-  opacity: 0.88;
+  opacity: 0.94;
 }
 
 .face-content,
@@ -38,27 +70,28 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .face-label,
 .back-player {
-  font-size: 26rpx;
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
   font-weight: 700;
 }
 
 .face-word {
-  margin-top: 20rpx;
-  font-size: 38rpx;
+  margin-top: 14rpx;
+  font-size: 42rpx;
   font-weight: 800;
   line-height: 1.2;
 }
 
 .face-pinyin {
-  margin-top: 12rpx;
-  font-size: 24rpx;
+  font-size: 26rpx;
   letter-spacing: 2rpx;
-  text-transform: lowercase;
-  opacity: 0.88;
+  opacity: 0.7;
 }
 
 .card-hint,
@@ -72,11 +105,11 @@
 }
 
 .back-badge {
-  background: rgba(243, 108, 61, 0.1);
-  color: var(--muted);
+  background: rgba(255, 247, 235, 0.16);
+  color: rgba(255, 243, 232, 0.76);
 }
 
 .back-badge-viewed {
-  background: rgba(30, 156, 104, 0.14);
-  color: var(--success);
+  background: rgba(255, 247, 235, 0.2);
+  color: rgba(255, 243, 232, 0.92);
 }
