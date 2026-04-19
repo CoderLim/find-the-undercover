@@ -1,75 +1,198 @@
 .setup-shell {
   display: flex;
   flex-direction: column;
-  gap: 24rpx;
+  gap: 22rpx;
   width: 100%;
   max-width: 690rpx;
+  animation: rise-in 0.5s 0.06s var(--ease) both;
 }
 
+/* ---------- Picker card ---------- */
 .picker-card {
   position: relative;
   overflow: hidden;
-  padding: 28rpx 28rpx 30rpx;
+  padding: 26rpx 28rpx 24rpx;
   background:
     linear-gradient(180deg, rgba(255, 252, 246, 0.98) 0%, rgba(246, 232, 208, 0.96) 100%);
   border: 2rpx solid rgba(104, 65, 43, 0.12);
-  border-radius: 30rpx;
+  border-radius: 32rpx;
   box-shadow: var(--shadow);
 }
 
 .picker-card::after {
   content: "";
   position: absolute;
-  right: -32rpx;
-  bottom: -42rpx;
-  width: 140rpx;
-  height: 140rpx;
+  right: -40rpx;
+  bottom: -50rpx;
+  width: 180rpx;
+  height: 180rpx;
   border-radius: 50%;
-  background: rgba(184, 91, 63, 0.08);
+  background: radial-gradient(circle, rgba(184, 91, 63, 0.14) 0%, rgba(184, 91, 63, 0) 70%);
+  pointer-events: none;
+}
+
+.picker-head {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.step-chip {
+  padding: 6rpx 14rpx;
+  font-size: 20rpx;
+  letter-spacing: 2rpx;
+  color: #fffaf0;
+  background: linear-gradient(135deg, #7c3526 0%, #b85b3f 100%);
+  border-radius: 999rpx;
+  box-shadow: 0 4rpx 10rpx rgba(124, 53, 38, 0.28);
 }
 
 .picker-label {
-  position: relative;
-  z-index: 1;
-  font-size: 22rpx;
+  font-size: 26rpx;
   letter-spacing: 3rpx;
-  text-transform: uppercase;
   color: var(--muted);
+  font-weight: 600;
 }
 
+/* ---------- Picker field ---------- */
 .picker-field {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 1;
-  margin-top: 12rpx;
+  margin-top: 16rpx;
+  padding: 18rpx 20rpx 18rpx 24rpx;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2rpx solid rgba(124, 53, 38, 0.1);
+  border-radius: 22rpx;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.picker-field:active {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(124, 53, 38, 0.22);
 }
 
 .picker-value {
-  font-size: 40rpx;
+  display: flex;
+  align-items: baseline;
+  gap: 6rpx;
+  font-size: 44rpx;
   font-weight: 700;
   color: var(--ink);
+  line-height: 1.1;
+}
+
+.picker-value-empty {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--muted-2);
+}
+
+.picker-value-num {
+  font-size: 56rpx;
+  font-weight: 800;
+  color: var(--accent-deep);
+  letter-spacing: 2rpx;
+}
+
+.picker-value-unit {
+  font-size: 26rpx;
+  color: var(--muted);
+  letter-spacing: 1rpx;
 }
 
 .picker-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72rpx;
-  height: 72rpx;
+  width: 64rpx;
+  height: 64rpx;
   border-radius: 50%;
-  background: rgba(184, 91, 63, 0.12);
-  box-shadow: inset 0 0 0 2rpx rgba(184, 91, 63, 0.08);
+  background: linear-gradient(135deg, rgba(184, 91, 63, 0.18) 0%, rgba(184, 91, 63, 0.08) 100%);
+  box-shadow: inset 0 0 0 2rpx rgba(184, 91, 63, 0.14);
+}
+
+.picker-arrow-inner {
   font-size: 38rpx;
   color: var(--accent-deep);
   line-height: 1;
+  margin-top: -8rpx;
 }
 
+.picker-hint {
+  margin-top: 14rpx;
+  position: relative;
+  z-index: 1;
+  font-size: 22rpx;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.picker-hint-row {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.picker-tag {
+  padding: 4rpx 12rpx;
+  font-size: 20rpx;
+  color: var(--accent-deep);
+  background: rgba(184, 91, 63, 0.14);
+  border-radius: 999rpx;
+}
+
+/* ---------- Start button ---------- */
 .start-button {
-  margin-top: 6rpx;
-  height: 102rpx;
-  line-height: 102rpx;
-  border-radius: 30rpx;
+  margin-top: 10rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  border-radius: 32rpx;
   box-shadow: var(--shadow-heavy);
+  position: relative;
+  overflow: hidden;
+}
+
+.start-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: shimmer 2.6s var(--ease) infinite;
+}
+
+.start-button[disabled]::before {
+  display: none;
+}
+
+.start-button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14rpx;
+  line-height: 1;
+}
+
+.start-button-text {
+  font-size: 32rpx;
+  font-weight: 800;
+  letter-spacing: 4rpx;
+}
+
+.start-button-arrow {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.start-hint {
+  text-align: center;
+  font-size: 22rpx;
+  color: var(--muted-2);
 }

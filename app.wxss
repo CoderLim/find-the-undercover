@@ -1,44 +1,57 @@
 :root {
-  --bg-top: #f7ecd5;
-  --bg-bottom: #dfc39c;
-  --table-top: #32594f;
-  --table-bottom: #1e3832;
+  --bg-top: #faecd0;
+  --bg-mid: #efd4a6;
+  --bg-bottom: #d9b57c;
+  --table-top: #2f5d52;
+  --table-bottom: #18322c;
   --panel: rgba(251, 243, 228, 0.94);
   --panel-strong: #fff9ef;
-  --ink: #2d2118;
-  --muted: #77614d;
+  --ink: #2a1d13;
+  --ink-soft: #4a3728;
+  --muted: #7a6148;
+  --muted-2: #a48a6b;
   --accent: #b85b3f;
   --accent-deep: #7c3526;
-  --accent-soft: #e7c4ac;
+  --accent-soft: #f1cfb4;
+  --gold: #c99351;
+  --gold-soft: #f4dcb4;
   --success: #2f8c69;
+  --danger: #c94f3b;
   --border: rgba(79, 49, 33, 0.14);
+  --border-strong: rgba(79, 49, 33, 0.28);
   --shadow: 0 22rpx 48rpx rgba(88, 48, 27, 0.14);
   --shadow-heavy: 0 28rpx 60rpx rgba(34, 19, 12, 0.22);
+  --shadow-soft: 0 10rpx 24rpx rgba(88, 48, 27, 0.08);
   --radius-xl: 36rpx;
   --radius-lg: 28rpx;
   --radius-md: 20rpx;
+  --radius-sm: 14rpx;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 page {
   min-height: 100%;
   background:
-    radial-gradient(circle at top, rgba(255, 251, 243, 0.68) 0%, rgba(255, 251, 243, 0) 32%),
-    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    radial-gradient(120% 60% at 50% -10%, rgba(255, 250, 240, 0.9) 0%, rgba(255, 250, 240, 0) 55%),
+    radial-gradient(80% 40% at 110% 10%, rgba(201, 147, 81, 0.32) 0%, rgba(201, 147, 81, 0) 60%),
+    radial-gradient(70% 40% at -10% 30%, rgba(184, 91, 63, 0.22) 0%, rgba(184, 91, 63, 0) 60%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%);
   color: var(--ink);
-  font-family: "Trebuchet MS", "Palatino", "PingFang SC", serif;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Trebuchet MS", "Palatino", serif;
 }
 
 .page-shell {
   min-height: 100vh;
-  padding: 32rpx 24rpx 48rpx;
+  padding: 36rpx 26rpx 56rpx;
   box-sizing: border-box;
 }
 
+/* ---------- Cards ---------- */
 .section-card {
   margin-top: 24rpx;
   padding: 28rpx;
   background:
-    linear-gradient(180deg, rgba(255, 252, 244, 0.96) 0%, rgba(248, 237, 216, 0.94) 100%);
+    linear-gradient(180deg, rgba(255, 252, 244, 0.98) 0%, rgba(248, 235, 211, 0.96) 100%);
   border: 2rpx solid var(--border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
@@ -64,11 +77,13 @@ page {
   color: var(--muted);
 }
 
+/* ---------- Buttons ---------- */
 .button-primary,
 .button-secondary,
 .chip-button {
   border: none;
   border-radius: 999rpx;
+  transition: transform 0.18s var(--ease), box-shadow 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 
 .button-primary::after,
@@ -78,32 +93,72 @@ page {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, #ab563b 0%, #cf7756 100%);
+  background: linear-gradient(135deg, #a84f36 0%, #d17a58 55%, #e69b6f 100%);
   color: #fffaf3;
   font-size: 30rpx;
   font-weight: 700;
   letter-spacing: 2rpx;
-  box-shadow: 0 18rpx 34rpx rgba(133, 63, 41, 0.24);
+  box-shadow:
+    0 18rpx 34rpx rgba(133, 63, 41, 0.28),
+    inset 0 2rpx 0 rgba(255, 255, 255, 0.28);
 }
 
 .button-primary[disabled] {
-  background: #d8c3ae;
+  background: linear-gradient(135deg, #d8c3ae 0%, #c8b39e 100%);
   color: rgba(45, 27, 17, 0.45);
   box-shadow: none;
 }
 
-.button-secondary {
-  background: rgba(255, 249, 241, 0.86);
-  color: var(--ink);
-  border: 2rpx solid rgba(94, 52, 33, 0.12);
+.button-primary.button-hover {
+  transform: translateY(2rpx);
+  box-shadow: 0 10rpx 22rpx rgba(133, 63, 41, 0.22);
 }
 
+.button-secondary {
+  background: rgba(255, 249, 241, 0.92);
+  color: var(--ink);
+  border: 2rpx solid rgba(94, 52, 33, 0.16);
+  font-weight: 600;
+}
+
+.button-secondary.button-hover {
+  background: rgba(255, 249, 241, 0.75);
+  transform: translateY(2rpx);
+}
+
+/* ---------- Status pill & chips ---------- */
 .status-pill {
   display: inline-flex;
   align-items: center;
-  padding: 10rpx 18rpx;
+  padding: 10rpx 20rpx;
   border-radius: 999rpx;
   background: rgba(255, 255, 255, 0.72);
   color: var(--muted);
   font-size: 24rpx;
+}
+
+/* ---------- Reusable animations ---------- */
+@keyframes rise-in {
+  0% {
+    opacity: 0;
+    transform: translateY(24rpx);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(184, 91, 63, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 18rpx rgba(184, 91, 63, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
 }

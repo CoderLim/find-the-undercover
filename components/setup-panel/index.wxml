@@ -1,16 +1,29 @@
 <view class="setup-shell">
   <view class="picker-card">
-    <view class="picker-label">人数</view>
+    <view class="picker-head">
+      <view class="step-chip">STEP 01</view>
+      <view class="picker-label">参与人数</view>
+    </view>
     <picker mode="selector" range="{{playerCountOptions}}" value="{{selectedPlayerIndex}}" bindchange="onSelectCount">
       <view class="picker-field">
-        <view class="picker-value">{{selectedPlayerCount ? selectedPlayerCount + ' 人' : '请选择'}}</view>
-        <view class="picker-arrow">⌄</view>
+        <view class="picker-value {{selectedPlayerCount ? '' : 'picker-value-empty'}}">
+          <text wx:if="{{selectedPlayerCount}}" class="picker-value-num">{{selectedPlayerCount}}</text>
+          <text wx:if="{{selectedPlayerCount}}" class="picker-value-unit">人</text>
+          <text wx:else>请选择人数</text>
+        </view>
+        <view class="picker-arrow">
+          <view class="picker-arrow-inner">⌄</view>
+        </view>
       </view>
     </picker>
+    <view class="picker-hint">建议 4~8 人最有氛围，最多支持 12 人</view>
   </view>
 
   <view class="picker-card">
-    <view class="picker-label">词库类型</view>
+    <view class="picker-head">
+      <view class="step-chip">STEP 02</view>
+      <view class="picker-label">词库类型</view>
+    </view>
     <picker
       mode="selector"
       range="{{categories}}"
@@ -19,11 +32,32 @@
       bindchange="onSelectCategory"
     >
       <view class="picker-field">
-        <view class="picker-value">{{selectedCategoryId ? categories[selectedCategoryIndex].name : '请选择'}}</view>
-        <view class="picker-arrow">⌄</view>
+        <view class="picker-value {{selectedCategoryId ? '' : 'picker-value-empty'}}">
+          <text>{{selectedCategoryId ? categories[selectedCategoryIndex].name : '请选择词库'}}</text>
+        </view>
+        <view class="picker-arrow">
+          <view class="picker-arrow-inner">⌄</view>
+        </view>
       </view>
     </picker>
+    <view wx:if="{{selectedCategoryId && categories[selectedCategoryIndex]}}" class="picker-hint picker-hint-row">
+      <view class="picker-tag">当前词库</view>
+      <text>收录 {{categories[selectedCategoryIndex].pairCount}} 组词对</text>
+    </view>
+    <view wx:else class="picker-hint">不同词库对语感与难度要求不同</view>
   </view>
 
-  <button class="button-primary start-button" disabled="{{!canStart}}" bindtap="onStartGame">开始游戏</button>
+  <button
+    class="button-primary start-button"
+    hover-class="button-hover"
+    disabled="{{!canStart}}"
+    bindtap="onStartGame"
+  >
+    <view class="start-button-inner">
+      <text class="start-button-text">开始游戏</text>
+      <text class="start-button-arrow">→</text>
+    </view>
+  </button>
+
+  <view wx:if="{{!canStart}}" class="start-hint">完成以上两步即可开始</view>
 </view>

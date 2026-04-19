@@ -4,22 +4,39 @@
       <view
         class="player-card {{(item.isOpen || gamePhase === 'revealed') ? 'player-card-open' : ''}} {{item.hasViewed ? 'player-card-viewed' : ''}} {{gamePhase === 'revealed' && item.isUndercover ? 'player-card-undercover' : ''}}"
         data-player-id="{{item.id}}"
+        hover-class="player-card-hover"
+        hover-stay-time="120"
         bindtap="onCardTap"
       >
+        <!-- 正面：已翻开 / 揭晓阶段 -->
         <view wx:if="{{item.isOpen || gamePhase === 'revealed'}}" class="face-content">
-          <view class="face-pinyin">{{item.pinyin}}</view>
-          <view class="face-word">{{item.word}}</view>
-          <view wx:if="{{gamePhase !== 'revealed'}}" class="card-hint">再次点击关闭</view>
+          <view class="face-top">
+            <view class="face-player">{{item.label}}</view>
+            <view wx:if="{{gamePhase === 'revealed' && item.isUndercover}}" class="face-tag face-tag-spy">卧底</view>
+            <view wx:elif="{{gamePhase === 'revealed'}}" class="face-tag face-tag-normal">平民</view>
+          </view>
+          <view class="face-word-wrap">
+            <view class="face-pinyin">{{item.pinyin}}</view>
+            <view class="face-word">{{item.word}}</view>
+          </view>
+          <view wx:if="{{gamePhase !== 'revealed'}}" class="card-hint">再次点击收起</view>
         </view>
 
+        <!-- 反面：未查看 / 已查看 -->
         <view wx:else class="back-content">
-          <view class="back-player">{{item.label}}</view>
+          <view class="back-deco">
+            <view class="back-deco-diamond"></view>
+          </view>
+          <view class="back-center">
+            <view class="back-player">{{item.label}}</view>
+            <view class="back-sub">Player</view>
+          </view>
           <view class="back-badge {{item.hasViewed ? 'back-badge-viewed' : ''}}">
-            {{item.hasViewed ? '已查看' : '点击查看'}}
+            <view wx:if="{{item.hasViewed}}" class="back-badge-check">✓</view>
+            <text>{{item.hasViewed ? '已查看' : '点击查看'}}</text>
           </view>
         </view>
       </view>
     </block>
   </view>
-
 </view>
