@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "player-card-grid": "/components/player-card-grid/index",
+    "reveal-panel": "/components/reveal-panel/index"
+  },
+  "navigationBarTitleText": "开牌"
+}

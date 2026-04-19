@@ -1,0 +1,17 @@
+<view class="page-shell">
+  <player-card-grid
+    players="{{players}}"
+    game-phase="{{gamePhase}}"
+    viewed-count="{{viewedCount}}"
+    bind:cardtap="onCardTap"
+  />
+
+  <reveal-panel
+    can-reveal="{{canReveal}}"
+    game-phase="{{gamePhase}}"
+    reveal-summary="{{revealSummary}}"
+    bind:reveal="onReveal"
+    bind:nextround="onNextRound"
+    bind:reset="onReset"
+  />
+</view>

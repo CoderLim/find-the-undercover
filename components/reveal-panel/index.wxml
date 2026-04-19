@@ -1,0 +1,21 @@
+<view class="section-card">
+  <button
+    wx:if="{{gamePhase === 'playing'}}"
+    class="button-primary reveal-button"
+    disabled="{{!canReveal}}"
+    bindtap="onReveal"
+  >
+    揭开谜底
+  </button>
+
+  <view class="action-row">
+    <button
+      wx:if="{{gamePhase === 'revealed'}}"
+      class="button-primary compact-button"
+      bindtap="onNextRound"
+    >
+      再来一局
+    </button>
+    <button class="button-secondary compact-button" bindtap="onReset">重新设置</button>
+  </view>
+</view>

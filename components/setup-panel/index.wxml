@@ -1,0 +1,29 @@
+<view class="setup-shell">
+  <view class="picker-card">
+    <view class="picker-label">人数</view>
+    <picker mode="selector" range="{{playerCountOptions}}" value="{{selectedPlayerIndex}}" bindchange="onSelectCount">
+      <view class="picker-field">
+        <view class="picker-value">{{selectedPlayerCount ? selectedPlayerCount + ' 人' : '请选择'}}</view>
+        <view class="picker-arrow">⌄</view>
+      </view>
+    </picker>
+  </view>
+
+  <view class="picker-card">
+    <view class="picker-label">词库类型</view>
+    <picker
+      mode="selector"
+      range="{{categories}}"
+      range-key="name"
+      value="{{selectedCategoryIndex}}"
+      bindchange="onSelectCategory"
+    >
+      <view class="picker-field">
+        <view class="picker-value">{{selectedCategoryId ? categories[selectedCategoryIndex].name : '请选择'}}</view>
+        <view class="picker-arrow">⌄</view>
+      </view>
+    </picker>
+  </view>
+
+  <button class="button-primary start-button" disabled="{{!canStart}}" bindtap="onStartGame">开始游戏</button>
+</view>

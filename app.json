@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/play/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "谁是卧底",
+    "navigationBarBackgroundColor": "#fff1d7",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff7eb",
+    "backgroundTextStyle": "light"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

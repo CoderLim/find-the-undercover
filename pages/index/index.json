@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "setup-panel": "/components/setup-panel/index",
+    "player-card-grid": "/components/player-card-grid/index",
+    "reveal-panel": "/components/reveal-panel/index"
+  },
+  "navigationBarTitleText": "谁是卧底"
+}

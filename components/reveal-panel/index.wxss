@@ -1,0 +1,14 @@
+.reveal-button {
+  margin-top: 24rpx;
+}
+
+.action-row {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 26rpx;
+}
+
+.compact-button {
+  flex: 1;
+  font-size: 28rpx;
+}

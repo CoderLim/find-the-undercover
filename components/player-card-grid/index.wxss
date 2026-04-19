@@ -1,0 +1,82 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18rpx;
+  margin-top: 26rpx;
+}
+
+.player-card {
+  min-height: 218rpx;
+  padding: 22rpx;
+  border-radius: 28rpx;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 236, 211, 0.9) 100%);
+  border: 2rpx solid rgba(243, 108, 61, 0.1);
+  box-shadow: 0 14rpx 28rpx rgba(128, 67, 31, 0.1);
+}
+
+.player-card-open {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.82) 0, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(135deg, #f36c3d 0%, #ff9b61 100%);
+  color: #fff8ef;
+}
+
+.player-card-undercover {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.78) 0, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(135deg, #c5451f 0%, #eb6b43 100%);
+}
+
+.player-card-viewed {
+  opacity: 0.88;
+}
+
+.face-content,
+.back-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.face-label,
+.back-player {
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.face-word {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.face-pinyin {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  text-transform: lowercase;
+  opacity: 0.88;
+}
+
+.card-hint,
+.back-badge {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.back-badge {
+  background: rgba(243, 108, 61, 0.1);
+  color: var(--muted);
+}
+
+.back-badge-viewed {
+  background: rgba(30, 156, 104, 0.14);
+  color: var(--success);
+}

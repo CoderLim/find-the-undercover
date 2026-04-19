@@ -1,0 +1,12 @@
+<view class="page-shell">
+  <setup-panel
+    player-count-options="{{playerCountOptions}}"
+    selected-player-count="{{playerCount}}"
+    categories="{{categories}}"
+    selected-category-id="{{categoryId}}"
+    can-start="{{canStart}}"
+    bind:selectcount="onSelectCount"
+    bind:selectcategory="onSelectCategory"
+    bind:startgame="onStartGame"
+  />
+</view>

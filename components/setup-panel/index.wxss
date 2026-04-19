@@ -1,0 +1,44 @@
+.setup-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  padding-top: 40rpx;
+}
+
+.picker-card {
+  padding: 24rpx 26rpx;
+  background: rgba(255, 248, 236, 0.94);
+  border: 2rpx solid rgba(94, 52, 33, 0.1);
+  border-radius: 28rpx;
+  box-shadow: var(--shadow);
+}
+
+.picker-label {
+  font-size: 24rpx;
+  color: var(--muted);
+}
+
+.picker-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.picker-value {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.picker-arrow {
+  font-size: 38rpx;
+  color: var(--accent-deep);
+  line-height: 1;
+}
+
+.start-button {
+  margin-top: 8rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+}

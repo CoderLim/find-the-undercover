@@ -1,0 +1,26 @@
+<view class="section-card">
+  <view class="grid">
+    <block wx:for="{{players}}" wx:key="id">
+      <view
+        class="player-card {{(item.isOpen || gamePhase === 'revealed') ? 'player-card-open' : ''}} {{item.hasViewed ? 'player-card-viewed' : ''}} {{gamePhase === 'revealed' && item.isUndercover ? 'player-card-undercover' : ''}}"
+        data-player-id="{{item.id}}"
+        bindtap="onCardTap"
+      >
+        <view wx:if="{{item.isOpen || gamePhase === 'revealed'}}" class="face-content">
+          <view class="face-label">{{item.label}}</view>
+          <view class="face-word">{{item.word}}</view>
+          <view class="face-pinyin">{{item.pinyin}}</view>
+          <view wx:if="{{gamePhase !== 'revealed'}}" class="card-hint">再次点击关闭</view>
+        </view>
+
+        <view wx:else class="back-content">
+          <view class="back-player">{{item.label}}</view>
+          <view class="back-badge {{item.hasViewed ? 'back-badge-viewed' : ''}}">
+            {{item.hasViewed ? '已查看' : '点击查看'}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>
