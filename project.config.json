@@ -1,5 +1,5 @@
 {
-  "appid": "touristappid",
+  "appid": "wxd20cc6d616321c93",
   "projectname": "find-the-undercover",
   "compileType": "miniprogram",
   "miniprogramRoot": "./",
@@ -36,5 +36,6 @@
     "ignore": [],
     "include": []
   },
-  "editorSetting": {}
+  "editorSetting": {},
+  "libVersion": "3.15.2"
 }

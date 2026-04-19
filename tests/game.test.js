@@ -28,7 +28,7 @@ test('createGameRound assigns exactly one undercover and matching common words',
 test('togglePlayerCard opens one card at a time and marks viewed on close', () => {
   const round = createGameRound({
     playerCount: 3,
-    categoryId: 'music',
+    categoryId: 'animals',
     random: () => 0,
   });
 
