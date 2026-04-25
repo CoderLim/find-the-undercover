@@ -1,28 +1,4 @@
 <view class="section-card">
-  <!-- 揭晓结果摘要 -->
-  <view wx:if="{{gamePhase === 'revealed' && revealSummary}}" class="summary">
-    <view class="summary-header">
-      <view class="summary-kicker">真相揭晓</view>
-      <view class="summary-title">
-        卧底是 <text class="summary-title-accent">{{revealSummary.undercoverLabel}}</text>
-      </view>
-    </view>
-
-    <view class="summary-words">
-      <view class="summary-word summary-word-common">
-        <view class="summary-word-tag">平民词</view>
-        <view class="summary-word-main">{{revealSummary.commonWord}}</view>
-        <view class="summary-word-pinyin">{{revealSummary.commonPinyin}}</view>
-      </view>
-      <view class="summary-vs">VS</view>
-      <view class="summary-word summary-word-spy">
-        <view class="summary-word-tag">卧底词</view>
-        <view class="summary-word-main">{{revealSummary.undercoverWord}}</view>
-        <view class="summary-word-pinyin">{{revealSummary.undercoverPinyin}}</view>
-      </view>
-    </view>
-  </view>
-
   <view class="action-row">
     <button
       wx:if="{{gamePhase === 'revealed'}}"

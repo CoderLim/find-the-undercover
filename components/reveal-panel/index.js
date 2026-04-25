@@ -8,10 +8,6 @@ Component({
       type: String,
       value: 'setup',
     },
-    revealSummary: {
-      type: Object,
-      value: null,
-    },
   },
 
   methods: {
