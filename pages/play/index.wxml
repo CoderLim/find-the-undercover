@@ -1,33 +1,4 @@
 <view class="page-shell play-shell">
-  <view class="play-header">
-    <view class="play-phase-row">
-      <view class="play-phase">
-        <view class="play-phase-dot {{gamePhase === 'revealed' ? 'play-phase-dot-done' : ''}}"></view>
-        <text class="play-phase-text">
-          {{gamePhase === 'revealed' ? '已揭晓真相' : '传词阶段'}}
-        </text>
-      </view>
-      <view class="play-count">
-        <text class="play-count-num">{{viewedCount}}</text>
-        <text class="play-count-total">/ {{players.length}}</text>
-        <text class="play-count-label">已查看</text>
-      </view>
-    </view>
-
-    <view class="play-progress">
-      <view
-        class="play-progress-fill"
-        style="width: {{players.length ? (viewedCount / players.length * 100) : 0}}%"
-      ></view>
-    </view>
-
-    <view class="play-hint">
-      <text wx:if="{{gamePhase === 'revealed'}}">真相已揭晓，来一局新的吧！</text>
-      <text wx:elif="{{canReveal}}">所有人已查看，可以揭晓答案</text>
-      <text wx:else>依次传递手机，点击卡片查看自己的词</text>
-    </view>
-  </view>
-
   <player-card-grid
     players="{{players}}"
     game-phase="{{gamePhase}}"
