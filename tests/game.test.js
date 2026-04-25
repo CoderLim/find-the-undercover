@@ -8,6 +8,7 @@ const {
   revealAnswers,
   resetForNextRound,
 } = require('../utils/game');
+const { findCategoryById } = require('../data/word-bank');
 
 test('createGameRound assigns exactly one undercover and matching common words', () => {
   const round = createGameRound({
@@ -16,13 +17,15 @@ test('createGameRound assigns exactly one undercover and matching common words',
     random: () => 0,
   });
 
+  const expectedPair = findCategoryById('mixed').pairs[0];
+
   assert.equal(round.players.length, 6);
   assert.equal(round.players.filter((player) => player.isUndercover).length, 1);
   assert.equal(round.players[0].label, '玩家 1');
-  assert.equal(round.answer.commonWord, '苹果');
-  assert.equal(round.answer.commonPinyin, 'píng guǒ');
-  assert.equal(round.answer.undercoverWord, '梨');
-  assert.equal(round.answer.undercoverPinyin, 'lí');
+  assert.equal(round.answer.commonWord, expectedPair.commonWord);
+  assert.equal(round.answer.commonPinyin, expectedPair.commonPinyin);
+  assert.equal(round.answer.undercoverWord, expectedPair.undercoverWord);
+  assert.equal(round.answer.undercoverPinyin, expectedPair.undercoverPinyin);
 });
 
 test('togglePlayerCard opens one card at a time and marks viewed on close', () => {
