@@ -10,7 +10,7 @@
     "es6": true,
     "enhance": true,
     "postcss": true,
-    "minified": false,
+    "minified": true,
     "compileHotReLoad": true,
     "compileWorklet": false,
     "uglifyFileName": false,
@@ -33,7 +33,19 @@
   },
   "simulatorPluginLibVersion": {},
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      { "type": "folder", "value": "docs" },
+      { "type": "folder", "value": "tests" },
+      { "type": "folder", "value": "scripts" },
+      { "type": "folder", "value": "screenshots" },
+      { "type": "file", "value": "README.md" },
+      { "type": "file", "value": "assets/miniprogram-qrcode.png" },
+      { "type": "file", "value": "assets/app-icon-288.png" },
+      { "type": "file", "value": "assets/app-icon-144.png" },
+      { "type": "file", "value": "assets/app-icon.png" },
+      { "type": "file", "value": "assets/undercover-icon-288.png" },
+      { "type": "file", "value": "assets/undercover-icon-144.png" }
+    ],
     "include": []
   },
   "editorSetting": {},
