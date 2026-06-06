@@ -1,4 +1,5 @@
 const { findCategoryById } = require('../data/word-bank');
+const { pickFromPool } = require('./used-picker');
 
 const MIN_PLAYERS = 3;
 const MAX_PLAYERS = 12;
@@ -40,10 +41,20 @@ function createPlayers(playerCount, answer, undercoverIndex) {
   });
 }
 
-function createGameRound({ playerCount, categoryId, random = Math.random }) {
+function createGameRound({
+  playerCount,
+  categoryId,
+  random = Math.random,
+  usedPairIndices = [],
+}) {
   assertValidPlayerCount(playerCount);
   const category = assertCategory(categoryId);
-  const pair = category.pairs[pickRandomIndex(category.pairs.length, random)];
+  const { index: pairIndex, usedIndices: nextUsedPairIndices } = pickFromPool(
+    category.pairs.length,
+    usedPairIndices,
+    random,
+  );
+  const pair = category.pairs[pairIndex];
   const undercoverIndex = pickRandomIndex(playerCount, random);
   const players = createPlayers(playerCount, pair, undercoverIndex);
 
@@ -60,6 +71,7 @@ function createGameRound({ playerCount, categoryId, random = Math.random }) {
     },
     undercoverPlayerId: undercoverIndex + 1,
     revealSummary: null,
+    usedPairIndices: nextUsedPairIndices,
   };
 }
 
@@ -125,6 +137,7 @@ function resetForNextRound(round, random = Math.random) {
     playerCount: round.playerCount,
     categoryId: round.categoryId,
     random,
+    usedPairIndices: round.usedPairIndices || [],
   });
 }
 

@@ -1,5 +1,6 @@
 const { getCategorySummaries } = require('../../data/word-bank');
 const { MIN_PLAYERS, MAX_PLAYERS, createGameRound } = require('../../utils/game');
+const { STORAGE_KEYS, getUsedIndices, setUsedIndices } = require('../../utils/storage');
 
 function getPlayerCountOptions() {
   return Array.from({ length: MAX_PLAYERS - MIN_PLAYERS + 1 }, (_, index) => MIN_PLAYERS + index);
@@ -56,11 +57,16 @@ Page({
 
   onStartGame() {
     try {
+      const categoryId = this.data.categoryId;
+      const storageKey = STORAGE_KEYS.undercoverUsed(categoryId);
+      const usedPairIndices = getUsedIndices(storageKey);
       const round = createGameRound({
         playerCount: this.data.playerCount,
-        categoryId: this.data.categoryId,
+        categoryId,
+        usedPairIndices,
       });
 
+      setUsedIndices(storageKey, round.usedPairIndices);
       app.globalData.currentRound = round;
       wx.navigateTo({
         url: '/pages/play/index',

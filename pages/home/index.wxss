@@ -1,0 +1,63 @@
+.home-shell {
+  padding-top: 28rpx;
+  padding-bottom: 80rpx;
+}
+
+/* ---------- Game grid (two columns) ---------- */
+.game-grid {
+  width: 100%;
+  max-width: 690rpx;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+}
+
+.game-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36rpx 24rpx 30rpx;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 244, 0.98) 0%, rgba(248, 235, 211, 0.96) 100%);
+  border: 2rpx solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  animation: rise-in 0.5s var(--ease) both;
+  transition: transform 0.18s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.game-cell-hover {
+  transform: translateY(4rpx);
+  box-shadow: var(--shadow-soft);
+}
+
+.game-icon-wrap {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 36rpx;
+  overflow: hidden;
+  background: linear-gradient(160deg, #fff4dd 0%, #f1d5a6 100%);
+  box-shadow:
+    0 14rpx 28rpx rgba(34, 19, 12, 0.16),
+    inset 0 2rpx 0 rgba(255, 255, 255, 0.4);
+}
+
+.game-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.game-name {
+  margin-top: 22rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.game-subtitle {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: var(--muted);
+}

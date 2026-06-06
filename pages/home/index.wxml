@@ -1,0 +1,18 @@
+<view class="page-shell home-shell">
+  <view class="game-grid">
+    <view
+      class="game-cell"
+      wx:for="{{games}}"
+      wx:key="id"
+      data-url="{{item.url}}"
+      bindtap="onSelectGame"
+      hover-class="game-cell-hover"
+      hover-stay-time="80"
+    >
+      <view class="game-icon-wrap">
+        <image class="game-icon" src="{{item.icon}}" mode="aspectFill" />
+      </view>
+      <view class="game-name">{{item.name}}</view>
+    </view>
+  </view>
+</view>
