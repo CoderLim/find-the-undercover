@@ -3,7 +3,7 @@ const GAMES = [
     id: 'undercover',
     name: '谁是卧底',
     subtitle: '聚会推理',
-    icon: '/assets/app-icon.png',
+    icon: '/assets/undercover-icon.png',
     url: '/pages/index/index',
   },
   {
