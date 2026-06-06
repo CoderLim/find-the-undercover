@@ -89,3 +89,36 @@ test('resetForNextRound keeps setup values but reinitializes player states', () 
     true
   );
 });
+
+test('createGameRound avoids already used pair indices', () => {
+  const category = findCategoryById('animals');
+  const usedPairIndices = category.pairs.map((_, index) => index).slice(0, -1);
+  const round = createGameRound({
+    playerCount: 3,
+    categoryId: 'animals',
+    usedPairIndices,
+    random: () => 0,
+  });
+
+  assert.equal(round.usedPairIndices.length, category.pairs.length);
+  assert.equal(round.usedPairIndices.at(-1), category.pairs.length - 1);
+  assert.equal(
+    round.answer.commonWord,
+    category.pairs[category.pairs.length - 1].commonWord
+  );
+});
+
+test('resetForNextRound continues used pair tracking', () => {
+  const category = findCategoryById('fairy');
+  const usedPairIndices = category.pairs.map((_, index) => index).slice(0, -1);
+  const round = createGameRound({
+    playerCount: 3,
+    categoryId: 'fairy',
+    usedPairIndices,
+    random: () => 0,
+  });
+  const nextRound = resetForNextRound(round, () => 0);
+
+  assert.equal(nextRound.usedPairIndices.length, 1);
+  assert.notEqual(nextRound.answer.commonWord, round.answer.commonWord);
+});

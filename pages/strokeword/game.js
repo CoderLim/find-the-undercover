@@ -1,4 +1,6 @@
 const { puzzles } = require('../../data/puzzles.js');
+const { pickFromPool } = require('../../utils/used-picker');
+const { STORAGE_KEYS, getUsedIndices, setUsedIndices } = require('../../utils/storage');
 
 Page({
   data: {
@@ -13,16 +15,14 @@ Page({
 
   pickRandom() {
     if (!puzzles.length) return;
-    let next = Math.floor(Math.random() * puzzles.length);
-    // 题库多于一题时，避免连续抽到同一题
-    if (puzzles.length > 1) {
-      while (next === this.data.currentIndex) {
-        next = Math.floor(Math.random() * puzzles.length);
-      }
-    }
+
+    const used = getUsedIndices(STORAGE_KEYS.STROKEWORD_USED);
+    const { index, usedIndices } = pickFromPool(puzzles.length, used);
+
+    setUsedIndices(STORAGE_KEYS.STROKEWORD_USED, usedIndices);
     this.setData({
-      puzzle: puzzles[next],
-      currentIndex: next,
+      puzzle: puzzles[index],
+      currentIndex: index,
       revealed: false
     });
   },

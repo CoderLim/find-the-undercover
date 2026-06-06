@@ -54,7 +54,6 @@
 .sw-answer {
   margin-top: 72rpx;
   width: 100%;
-  min-height: 240rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,11 +62,6 @@
 }
 .sw-answer-show {
   border-color: var(--accent);
-}
-.sw-answer-placeholder {
-  font-size: 30rpx;
-  color: var(--muted);
-  letter-spacing: 2rpx;
 }
 .sw-answer-word {
   margin-top: 18rpx;

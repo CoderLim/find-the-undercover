@@ -1,4 +1,5 @@
 const { canRevealAnswers, togglePlayerCard, revealAnswers, resetForNextRound } = require('../../utils/game');
+const { STORAGE_KEYS, setUsedIndices } = require('../../utils/storage');
 
 const app = getApp();
 
@@ -11,6 +12,7 @@ Page({
     answer: null,
     undercoverPlayerId: null,
     revealSummary: null,
+    usedPairIndices: [],
     canReveal: false,
     viewedCount: 0,
   },
@@ -48,6 +50,7 @@ Page({
       answer: this.data.answer,
       undercoverPlayerId: this.data.undercoverPlayerId,
       revealSummary: this.data.revealSummary,
+      usedPairIndices: this.data.usedPairIndices,
     };
 
     app.globalData.currentRound = round;
@@ -63,6 +66,7 @@ Page({
         players: this.data.players,
         answer: this.data.answer,
         undercoverPlayerId: this.data.undercoverPlayerId,
+        usedPairIndices: this.data.usedPairIndices,
       });
 
       app.globalData.currentRound = round;
@@ -79,8 +83,10 @@ Page({
     const round = resetForNextRound({
       playerCount: this.data.playerCount,
       categoryId: this.data.categoryId,
+      usedPairIndices: this.data.usedPairIndices || [],
     });
 
+    setUsedIndices(STORAGE_KEYS.undercoverUsed(round.categoryId), round.usedPairIndices);
     app.globalData.currentRound = round;
     this.applyRound(round);
   },
@@ -106,6 +112,7 @@ Page({
       answer: round.answer,
       undercoverPlayerId: round.undercoverPlayerId,
       revealSummary: round.revealSummary,
+      usedPairIndices: round.usedPairIndices || [],
       canReveal: canRevealAnswers(round.players),
       viewedCount: round.players.filter((player) => player.hasViewed).length,
     });

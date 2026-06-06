@@ -15,13 +15,10 @@
     </view>
   </view>
 
-  <view class="section-card sw-answer {{revealed ? 'sw-answer-show' : ''}}">
-    <block wx:if="{{revealed}}">
-      <view class="section-kicker">答案</view>
-      <view class="sw-answer-word">{{puzzle.word}}</view>
-      <view class="sw-answer-tip">{{puzzle.tip}}</view>
-    </block>
-    <view wx:else class="sw-answer-placeholder">想好了就看答案吧</view>
+  <view wx:if="{{revealed}}" class="section-card sw-answer sw-answer-show">
+    <view class="section-kicker">答案</view>
+    <view class="sw-answer-word">{{puzzle.word}}</view>
+    <view class="sw-answer-tip">{{puzzle.tip}}</view>
   </view>
 
   <view class="sw-actions">
