@@ -6,6 +6,13 @@ const GAMES = [
     icon: '/assets/app-icon.png',
     url: '/pages/index/index',
   },
+  {
+    id: 'strokeword',
+    name: '添笔成词',
+    subtitle: '加笔猜词',
+    icon: '/assets/strokeword-icon.png',
+    url: '/pages/strokeword/index',
+  },
 ];
 
 Page({

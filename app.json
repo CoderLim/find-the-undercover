@@ -2,7 +2,9 @@
   "pages": [
     "pages/home/index",
     "pages/index/index",
-    "pages/play/index"
+    "pages/play/index",
+    "pages/strokeword/index",
+    "pages/strokeword/game"
   ],
   "window": {
     "navigationBarTitleText": "互动助手",

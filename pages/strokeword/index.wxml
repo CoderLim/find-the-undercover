@@ -1,0 +1,25 @@
+<view class="page-shell sw-home">
+  <view class="sw-brand">
+    <view class="sw-title">添笔成词</view>
+    <view class="sw-seal">猜</view>
+  </view>
+
+  <view class="section-card sw-rule-card">
+    <view class="section-kicker">玩法</view>
+    <view class="sw-rule-line">给两个字添几笔，拼出一个词</view>
+
+    <view class="sw-example">
+      <view class="sw-eg-row">
+        <view class="sw-eg-char">日<text class="sw-eg-add">+1笔</text></view>
+        <view class="sw-eg-plus">·</view>
+        <view class="sw-eg-char">大<text class="sw-eg-add">+1笔</text></view>
+        <view class="sw-eg-eq">＝</view>
+        <view class="sw-eg-word">白天</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="sw-actions">
+    <view class="button-primary sw-btn" hover-class="button-hover" bindtap="onStart">开始</view>
+  </view>
+</view>

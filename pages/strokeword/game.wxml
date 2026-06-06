@@ -1,0 +1,31 @@
+<view class="page-shell sw-game">
+  <view class="sw-hint">给左字加 {{puzzle.left.add}} 笔、右字加 {{puzzle.right.add}} 笔，组成一个词</view>
+
+  <view class="sw-stage">
+    <view class="sw-char-box">
+      <view class="sw-char">{{puzzle.left.base}}</view>
+      <view class="sw-char-add">＋{{puzzle.left.add}}笔</view>
+    </view>
+
+    <view class="sw-link">＋</view>
+
+    <view class="sw-char-box">
+      <view class="sw-char">{{puzzle.right.base}}</view>
+      <view class="sw-char-add">＋{{puzzle.right.add}}笔</view>
+    </view>
+  </view>
+
+  <view class="section-card sw-answer {{revealed ? 'sw-answer-show' : ''}}">
+    <block wx:if="{{revealed}}">
+      <view class="section-kicker">答案</view>
+      <view class="sw-answer-word">{{puzzle.word}}</view>
+      <view class="sw-answer-tip">{{puzzle.tip}}</view>
+    </block>
+    <view wx:else class="sw-answer-placeholder">想好了就看答案吧</view>
+  </view>
+
+  <view class="sw-actions">
+    <view wx:if="{{!revealed}}" class="button-primary sw-btn" hover-class="button-hover" bindtap="onReveal">查看答案</view>
+    <view class="button-secondary sw-btn" hover-class="button-hover" bindtap="onNext">换一题</view>
+  </view>
+</view>

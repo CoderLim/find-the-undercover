@@ -13,7 +13,6 @@
         <image class="game-icon" src="{{item.icon}}" mode="aspectFill" />
       </view>
       <view class="game-name">{{item.name}}</view>
-      <view class="game-subtitle">{{item.subtitle}}</view>
     </view>
   </view>
 </view>
