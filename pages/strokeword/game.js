@@ -9,6 +9,21 @@ Page({
     currentIndex: -1
   },
 
+  onShareAppMessage() {
+    return {
+      title: '添笔成词 - 你猜得出这个字吗？',
+      path: '/pages/home/index',
+      imageUrl: '/assets/strokeword-icon.png',
+    };
+  },
+
+  onShareTimeline() {
+    return {
+      title: '添笔成词 - 你猜得出这个字吗？',
+      imageUrl: '/assets/strokeword-icon.png',
+    };
+  },
+
   onLoad() {
     this.pickRandom();
   },

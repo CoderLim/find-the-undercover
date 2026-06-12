@@ -17,6 +17,21 @@ Page({
     canStart: false,
   },
 
+  onShareAppMessage() {
+    return {
+      title: '谁是卧底 - 来跟我一起玩！',
+      path: '/pages/home/index',
+      imageUrl: '/assets/undercover-icon.png',
+    };
+  },
+
+  onShareTimeline() {
+    return {
+      title: '谁是卧底 - 来跟我一起玩！',
+      imageUrl: '/assets/undercover-icon.png',
+    };
+  },
+
   onShow() {
     const { playerCount, categoryId } = app.globalData.gameSetup;
 

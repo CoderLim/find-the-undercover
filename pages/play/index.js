@@ -17,6 +17,21 @@ Page({
     viewedCount: 0,
   },
 
+  onShareAppMessage() {
+    return {
+      title: '谁是卧底 - 你能找出卧底吗？',
+      path: '/pages/home/index',
+      imageUrl: '/assets/undercover-icon.png',
+    };
+  },
+
+  onShareTimeline() {
+    return {
+      title: '谁是卧底 - 你能找出卧底吗？',
+      imageUrl: '/assets/undercover-icon.png',
+    };
+  },
+
   onShow() {
     const round = app.globalData.currentRound;
 

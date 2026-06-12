@@ -20,6 +20,21 @@ Page({
     games: GAMES,
   },
 
+  onShareAppMessage() {
+    return {
+      title: '聚会游戏大集合 - 一起来玩',
+      path: '/pages/home/index',
+      imageUrl: '/assets/app-icon.png',
+    };
+  },
+
+  onShareTimeline() {
+    return {
+      title: '聚会游戏大集合 - 一起来玩',
+      imageUrl: '/assets/app-icon.png',
+    };
+  },
+
   onSelectGame(event) {
     const url = event.currentTarget.dataset.url;
 

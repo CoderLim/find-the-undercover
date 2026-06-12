@@ -2,9 +2,9 @@
   "appid": "wxd20cc6d616321c93",
   "projectname": "find-the-undercover",
   "compileType": "miniprogram",
-  "miniprogramRoot": "./",
+  "miniprogramRoot": "",
   "simulatorType": "wechat",
-  "srcMiniprogramRoot": "./",
+  "srcMiniprogramRoot": "",
   "setting": {
     "urlCheck": false,
     "es6": true,
@@ -34,20 +34,57 @@
   "simulatorPluginLibVersion": {},
   "packOptions": {
     "ignore": [
-      { "type": "folder", "value": "docs" },
-      { "type": "folder", "value": "tests" },
-      { "type": "folder", "value": "scripts" },
-      { "type": "folder", "value": "screenshots" },
-      { "type": "file", "value": "README.md" },
-      { "type": "file", "value": "assets/miniprogram-qrcode.png" },
-      { "type": "file", "value": "assets/app-icon-288.png" },
-      { "type": "file", "value": "assets/app-icon-144.png" },
-      { "type": "file", "value": "assets/app-icon.png" },
-      { "type": "file", "value": "assets/undercover-icon-288.png" },
-      { "type": "file", "value": "assets/undercover-icon-144.png" }
+      {
+        "value": "docs",
+        "type": "folder"
+      },
+      {
+        "value": "tests",
+        "type": "folder"
+      },
+      {
+        "value": "scripts",
+        "type": "folder"
+      },
+      {
+        "value": "screenshots",
+        "type": "folder"
+      },
+      {
+        "value": "README.md",
+        "type": "file"
+      },
+      {
+        "value": "assets/miniprogram-qrcode.png",
+        "type": "file"
+      },
+      {
+        "value": "assets/app-icon-288.png",
+        "type": "file"
+      },
+      {
+        "value": "assets/app-icon-144.png",
+        "type": "file"
+      },
+      {
+        "value": "assets/app-icon.png",
+        "type": "file"
+      },
+      {
+        "value": "assets/undercover-icon-288.png",
+        "type": "file"
+      },
+      {
+        "value": "assets/undercover-icon-144.png",
+        "type": "file"
+      }
     ],
     "include": []
   },
-  "editorSetting": {},
-  "libVersion": "3.15.2"
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "libVersion": "3.15.2",
+  "condition": {}
 }
