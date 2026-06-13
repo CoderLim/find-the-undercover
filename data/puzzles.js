@@ -350,6 +350,306 @@ const puzzles = [
     right: { base: '十', add: 2, answer: '木' },
     word: '古木',
     tip: '“口”上加一“十”成“古”，“十”加一撇一捺成“木”。'
+  },
+  {
+    left: { base: '口', add: 3, answer: '吐' },
+    right: { base: '子', add: 3, answer: '字' },
+    word: '吐字',
+    tip: '“口”右加“土”成“吐”，“子”上加宝盖成“字”。'
+  },
+  {
+    left: { base: '工', add: 2, answer: '巧' },
+    right: { base: '口', add: 3, answer: '合' },
+    word: '巧合',
+    tip: '“工”右加“丂”成“巧”，“口”上加“人”和一横成“合”。'
+  },
+  {
+    left: { base: '弓', add: 1, answer: '引' },
+    right: { base: '月', add: 1, answer: '用' },
+    word: '引用',
+    tip: '“弓”右加一竖成“引”，“月”里加一竖成“用”。'
+  },
+  {
+    left: { base: '弓', add: 1, answer: '引' },
+    right: { base: '儿', add: 2, answer: '见' },
+    word: '引见',
+    tip: '“弓”右加一竖成“引”，“儿”外加上框成“见”。'
+  },
+  {
+    left: { base: '夕', add: 3, answer: '岁' },
+    right: { base: '木', add: 1, answer: '末' },
+    word: '岁末',
+    tip: '“夕”上加“山”成“岁”，“木”上加一横成“末”。'
+  },
+  {
+    left: { base: '口', add: 3, answer: '各' },
+    right: { base: '白', add: 1, answer: '自' },
+    word: '各自',
+    tip: '“口”上加“夂”成“各”，“白”里加一横成“自”。'
+  },
+  {
+    left: { base: '尤', add: 1, answer: '龙' },
+    right: { base: '大', add: 2, answer: '头' },
+    word: '龙头',
+    tip: '“尤”上加一撇成“龙”，“大”上加两点成“头”。'
+  },
+  {
+    left: { base: '日', add: 1, answer: '甲' },
+    right: { base: '中', add: 2, answer: '虫' },
+    word: '甲虫',
+    tip: '“日”中加一竖成“甲”，“中”下加一提一点成“虫”。'
+  },
+  {
+    left: { base: '全', add: 2, answer: '金' },
+    right: { base: '巾', add: 1, answer: '币' },
+    word: '金币',
+    tip: '“全”中加两点成“金”，“巾”上加一撇成“币”。'
+  },
+  {
+    left: { base: '火', add: 3, answer: '灵' },
+    right: { base: '舌', add: 3, answer: '活' },
+    word: '灵活',
+    tip: '“火”上加“彐”成“灵”，“舌”左加三点水成“活”。'
+  },
+  {
+    left: { base: '夫', add: 2, answer: '夹' },
+    right: { base: '古', add: 2, answer: '克' },
+    word: '夹克',
+    tip: '“夫”中加两点成“夹”，“古”下加“儿”成“克”。'
+  },
+  {
+    left: { base: '十', add: 1, answer: '千' },
+    right: { base: '古', add: 2, answer: '克' },
+    word: '千克',
+    tip: '“十”上加一撇成“千”，“古”下加“儿”成“克”。'
+  },
+  {
+    left: { base: '寸', add: 3, answer: '导' },
+    right: { base: '日', add: 1, answer: '电' },
+    word: '导电',
+    tip: '“寸”上加“巳”成“导”，“日”下加一竖弯成“电”。'
+  },
+  {
+    left: { base: '又', add: 3, answer: '对' },
+    right: { base: '寸', add: 2, answer: '付' },
+    word: '对付',
+    tip: '“又”右加“寸”成“对”，“寸”左加单人旁成“付”。'
+  },
+  {
+    left: { base: '大', add: 1, answer: '夫' },
+    right: { base: '了', add: 1, answer: '子' },
+    word: '夫子',
+    tip: '“大”上加一横成“夫”，“了”加一横成“子”。'
+  },
+  {
+    left: { base: '人', add: 2, answer: '从' },
+    right: { base: '止', add: 2, answer: '此' },
+    word: '从此',
+    tip: '“人”旁加一“人”成“从”，“止”右加“匕”成“此”。'
+  },
+  {
+    left: { base: '大', add: 3, answer: '因' },
+    right: { base: '止', add: 2, answer: '此' },
+    word: '因此',
+    tip: '“大”外加大口框成“因”，“止”右加“匕”成“此”。'
+  },
+  {
+    left: { base: '口', add: 2, answer: '召' },
+    right: { base: '口', add: 3, answer: '回' },
+    word: '召回',
+    tip: '“口”上加“刀”成“召”，“口”外加大口框成“回”。'
+  },
+  {
+    left: { base: '口', add: 2, answer: '古' },
+    right: { base: '寺', add: 2, answer: '诗' },
+    word: '古诗',
+    tip: '“口”上加一“十”成“古”，“寺”左加言字旁成“诗”。'
+  },
+  {
+    left: { base: '寺', add: 2, answer: '诗' },
+    right: { base: '口', add: 2, answer: '句' },
+    word: '诗句',
+    tip: '“寺”左加言字旁成“诗”，“口”外加“勹”成“句”。'
+  },
+  {
+    left: { base: '匕', add: 2, answer: '化' },
+    right: { base: '女', add: 3, answer: '妆' },
+    word: '化妆',
+    tip: '“匕”左加单人旁成“化”，“女”左加“丬”成“妆”。'
+  },
+  {
+    left: { base: '寸', add: 3, answer: '寻' },
+    right: { base: '戈', add: 3, answer: '找' },
+    word: '寻找',
+    tip: '“寸”上加“彐”成“寻”，“戈”左加提手旁成“找”。'
+  },
+  {
+    left: { base: '走', add: 3, answer: '赶' },
+    right: { base: '工', add: 2, answer: '巧' },
+    word: '赶巧',
+    tip: '“走”里加“干”成“赶”，“工”右加“丂”成“巧”。'
+  },
+  {
+    left: { base: '人', add: 1, answer: '大' },
+    right: { base: '白', add: 2, answer: '伯' },
+    word: '大伯',
+    tip: '“人”上加一横成“大”，“白”左加单人旁成“伯”。'
+  },
+  {
+    left: { base: '大', add: 1, answer: '文' },
+    right: { base: '匕', add: 2, answer: '化' },
+    word: '文化',
+    tip: '“大”上加一点成“文”，“匕”左加单人旁成“化”。'
+  },
+  {
+    left: { base: '大', add: 1, answer: '文' },
+    right: { base: '目', add: 3, answer: '具' },
+    word: '文具',
+    tip: '“大”上加一点成“文”，“目”下加一横和“八”成“具”。'
+  },
+  {
+    left: { base: '二', add: 2, answer: '元' },
+    right: { base: '玉', add: 3, answer: '宝' },
+    word: '元宝',
+    tip: '“二”下加“儿”成“元”，“玉”上加宝盖成“宝”。'
+  },
+  {
+    left: { base: '八', add: 2, answer: '公' },
+    right: { base: '元', add: 3, answer: '园' },
+    word: '公园',
+    tip: '“八”下加“厶”成“公”，“元”外加大口框成“园”。'
+  },
+  {
+    left: { base: '才', add: 3, answer: '团' },
+    right: { base: '员', add: 3, answer: '圆' },
+    word: '团圆',
+    tip: '“才”外加大口框成“团”，“员”外加大口框成“圆”。'
+  },
+  {
+    left: { base: '元', add: 3, answer: '园' },
+    right: { base: '一', add: 1, answer: '丁' },
+    word: '园丁',
+    tip: '“元”外加大口框成“园”，“一”加竖钩成“丁”。'
+  },
+  {
+    left: { base: '二', add: 1, answer: '工' },
+    right: { base: '一', add: 1, answer: '厂' },
+    word: '工厂',
+    tip: '“二”加一竖成“工”，“一”加一撇成“厂”。'
+  },
+  {
+    left: { base: '玉', add: 3, answer: '国' },
+    right: { base: '三', add: 1, answer: '王' },
+    word: '国王',
+    tip: '“玉”外加大口框成“国”，“三”加一竖成“王”。'
+  },
+  {
+    left: { base: '玉', add: 3, answer: '国' },
+    right: { base: '田', add: 3, answer: '画' },
+    word: '国画',
+    tip: '“玉”外加大口框成“国”，“田”外加一横和下框成“画”。'
+  },
+  {
+    left: { base: '田', add: 3, answer: '画' },
+    right: { base: '木', add: 1, answer: '本' },
+    word: '画本',
+    tip: '“田”外加一横和下框成“画”，“木”下加一横成“本”。'
+  },
+  {
+    left: { base: '田', add: 3, answer: '画' },
+    right: { base: '巾', add: 2, answer: '布' },
+    word: '画布',
+    tip: '“田”外加一横和下框成“画”，“巾”上加一横一撇成“布”。'
+  },
+  {
+    left: { base: '玉', add: 3, answer: '宝' },
+    right: { base: '口', add: 2, answer: '石' },
+    word: '宝石',
+    tip: '“玉”上加宝盖成“宝”，“口”上加一“厂”成“石”。'
+  },
+  {
+    left: { base: '人', add: 2, answer: '火' },
+    right: { base: '化', add: 3, answer: '花' },
+    word: '火花',
+    tip: '“人”上加两点成“火”，“化”上加草头成“花”。'
+  },
+  {
+    left: { base: '化', add: 3, answer: '花' },
+    right: { base: '木', add: 2, answer: '朵' },
+    word: '花朵',
+    tip: '“化”上加草头成“花”，“木”上加“几”成“朵”。'
+  },
+  {
+    left: { base: '化', add: 3, answer: '花' },
+    right: { base: '早', add: 3, answer: '草' },
+    word: '花草',
+    tip: '“化”上加草头成“花”，“早”上加草头成“草”。'
+  },
+  {
+    left: { base: '早', add: 3, answer: '草' },
+    right: { base: '十', add: 2, answer: '木' },
+    word: '草木',
+    tip: '“早”上加草头成“草”，“十”加一撇一捺成“木”。'
+  },
+  {
+    left: { base: '木', add: 3, answer: '杏' },
+    right: { base: '了', add: 1, answer: '子' },
+    word: '杏子',
+    tip: '“木”下加“口”成“杏”，“了”加一横成“子”。'
+  },
+  {
+    left: { base: '木', add: 3, answer: '李' },
+    right: { base: '了', add: 1, answer: '子' },
+    word: '李子',
+    tip: '“木”下加“子”成“李”，“了”加一横成“子”。'
+  },
+  {
+    left: { base: '田', add: 3, answer: '果' },
+    right: { base: '十', add: 3, answer: '汁' },
+    word: '果汁',
+    tip: '“田”下加三笔成“果”，“十”左加三点水成“汁”。'
+  },
+  {
+    left: { base: '田', add: 3, answer: '果' },
+    right: { base: '元', add: 3, answer: '园' },
+    word: '果园',
+    tip: '“田”下加三笔成“果”，“元”外加大口框成“园”。'
+  },
+  {
+    left: { base: '二', add: 2, answer: '云' },
+    right: { base: '木', add: 2, answer: '朵' },
+    word: '云朵',
+    tip: '“二”下加“厶”成“云”，“木”上加“几”成“朵”。'
+  },
+  {
+    left: { base: '口', add: 2, answer: '台' },
+    right: { base: '几', add: 2, answer: '风' },
+    word: '台风',
+    tip: '“口”上加“厶”成“台”，“几”里加一撇一点成“风”。'
+  },
+  {
+    left: { base: '几', add: 2, answer: '风' },
+    right: { base: '十', add: 2, answer: '车' },
+    word: '风车',
+    tip: '“几”里加一撇一点成“风”，“十”上加两笔成“车”。'
+  },
+  {
+    left: { base: '大', add: 1, answer: '天' },
+    right: { base: '大', add: 1, answer: '文' },
+    word: '天文',
+    tip: '“大”上加一横成“天”，“大”上加一点成“文”。'
+  },
+  {
+    left: { base: '大', add: 1, answer: '天' },
+    right: { base: '二', add: 2, answer: '井' },
+    word: '天井',
+    tip: '“大”上加一横成“天”，“二”加两竖成“井”。'
+  },
+  {
+    left: { base: '子', add: 3, answer: '孙' },
+    right: { base: '了', add: 1, answer: '子' },
+    word: '孙子',
+    tip: '“子”右加“小”成“孙”，“了”加一横成“子”。'
   }
 ];
 

@@ -33,3 +33,19 @@ test('pickFromPool handles single-item pool', () => {
   assert.equal(second.index, 0);
   assert.deepEqual(second.usedIndices, [0]);
 });
+
+test('pickFromPool does not repeat an index during a complete 104-item round', () => {
+  let usedIndices = [];
+  const pickedIndices = [];
+  let randomCall = 0;
+
+  for (let i = 0; i < 104; i += 1) {
+    const random = () => ((randomCall++ * 37) % 101) / 101;
+    const result = pickFromPool(104, usedIndices, random);
+    pickedIndices.push(result.index);
+    usedIndices = result.usedIndices;
+  }
+
+  assert.equal(new Set(pickedIndices).size, 104);
+  assert.equal(usedIndices.length, 104);
+});
